@@ -1,5 +1,7 @@
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.min.css";
+import Script from 'next/script'
 
 // <!-- Vendor CSS Files -->
 import "../assets/vendor/boxicons/css/boxicons.min.css";
@@ -35,9 +37,11 @@ export default function RootLayout({
 
           <BootstrapClient />
 
-          <MainJSClient />
+          <MainJSClient/>
 
         </body>
+
+
       </html>
     </>
   );

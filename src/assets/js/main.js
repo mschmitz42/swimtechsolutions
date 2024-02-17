@@ -47,6 +47,7 @@
    */
   if (select(".toggle-sidebar-btn")) {
     on("click", ".toggle-sidebar-btn", function (e) {
+      console.log("toggle-sidebar");
       select("body").classList.toggle("toggle-sidebar");
     });
   }
