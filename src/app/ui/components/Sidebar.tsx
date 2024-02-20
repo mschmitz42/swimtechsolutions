@@ -1,4 +1,6 @@
+"use client"
 
+import { signOut } from 'next-auth/react';
 import Link from 'next/link';
 
 export default function Sidebar() {
@@ -50,10 +52,10 @@ export default function Sidebar() {
 
 
                 <li className="nav-item">
-                    <Link className="nav-link collapsed" href="/">
+                    <button className="nav-link collapsed" onClick={() => signOut()}>
                     <i className="bi bi-box-arrow-right"></i>
                     <span>Logout</span>
-                    </Link>
+                    </button>
                 </li>
 
             </ul>
