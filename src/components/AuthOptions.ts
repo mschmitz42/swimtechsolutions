@@ -3,6 +3,8 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { PrismaClient } from "@prisma/client";
 import GithubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { getUserByEmail } from "@/db/users";
+import { compare } from "bcrypt";
 
 const prisma = new PrismaClient();
 
@@ -26,9 +28,22 @@ export const AuthOptions: NextAuthOptions = {
                 },
             },
             async authorize(credentials) {
-                // handle auth
-                console.log(credentials);
-                const user = { id: "someId", name: "Mike", email: "mike@swimtechsolutions.com"};
+                if (!credentials?.email || !credentials.password) {
+                    return null;
+                }
+
+                const user = await getUserByEmail(credentials.email);
+
+                if (!user || !user.profile || !user.profile.password) {
+                    return null;
+                }
+
+                const isValidPassword = await compare( credentials.password, user.profile.password )
+
+                if (!isValidPassword) {
+                    return null;
+                }
+
                 return user;
             }
         }),
