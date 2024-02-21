@@ -27,6 +27,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
 
 # vercel
 .vercel
@@ -34,3 +35,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+client_secret_974301105400-gqdik03mgf0fphh7frmijjtbo3cb9d9i.apps.googleusercontent.com.json
