@@ -11,11 +11,11 @@ export default async function ClientList () {
         <div className="card-grid">
             {users.map(user => (
                 <div key={user.id} className="card">
-                <div className="card-header">{user.profile?.firstName}</div>
+                <div className="card-header">{user.name}</div>
                 <div className="card-body">
                 <div>
                     <Image
-                        src={user.image ??=""}
+                        src={user.image ??="/img/logo.png"}
                         width={100}
                         height={100}
                         className=""
