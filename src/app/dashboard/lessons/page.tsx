@@ -3,7 +3,7 @@ export default function Page() {
         <>
 
             <div className="p-5 mb-5">
-                <h1>Swim Sessions</h1>
+                <h1>Lessons</h1>
             </div>
 
         </>

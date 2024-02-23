@@ -20,9 +20,9 @@ export default function Sidebar() {
                 <li className="nav-heading"></li>
 
                 <li className="nav-item">
-                    <Link className="nav-link collapsed" href="/dashboard/swimsessions">
+                    <Link className="nav-link collapsed" href="/dashboard/lessons">
                     <i className="bi bi-water"></i>
-                    <span>Swim Sessions</span>
+                    <span>Swim Lessons</span>
                     </Link>
                 </li>
 
