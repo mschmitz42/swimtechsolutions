@@ -33,7 +33,27 @@ export default function UserSearchForm() {
             ref={queryRef}
           />
         </FormGroup>
-        <button className="btn">Filter</button>
+        <FormGroup>
+          <label htmlFor="query">First Name</label>
+          <input
+            type="search"
+            name="firstName"
+            id="firstName"
+            defaultValue={query}
+            ref={queryRef}
+          />
+        </FormGroup>
+        <FormGroup>
+          <label htmlFor="query">Last Name</label>
+          <input
+            type="search"
+            name="lastName"
+            id="lastName"
+            defaultValue={query}
+            ref={queryRef}
+          />
+        </FormGroup>
+       <button className="btn">Filter</button>
       </div>
     </form>
   )

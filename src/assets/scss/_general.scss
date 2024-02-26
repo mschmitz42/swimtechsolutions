@@ -34,6 +34,33 @@ h2.blue {
   color: $blue;
 }
 
+.page-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  margin-bottom: 2rem;
+  gap: 2rem;
+}
+
+.page-title:has(+ .page-subtitle) {
+  margin-bottom: 1rem;
+}
+
+.page-subtitle {
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  display: block;
+}
+
+.page-title .title-btns {
+  font-size: 1.5rem;
+  font-weight: normal;
+  display: flex;
+  gap: 1rem;
+}
+
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
