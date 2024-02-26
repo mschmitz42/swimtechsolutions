@@ -12,7 +12,7 @@ export type ClientFormProps = {
   
 
 export function ClientForm( { user }: ClientFormProps ) {
-    const action = (user == null) ? createUserAction : editUserAction
+    const action = (user == null) ? createUserAction : editUserAction.bind( null, user.userId );
 
     const [errors, formAction] = useFormState(action, {})
   
@@ -77,7 +77,7 @@ export function ClientForm( { user }: ClientFormProps ) {
         <div className="form-row form-btn-row">
             <Link
                 className="btn btn-outline"
-                href={user ? `/clients/${user.userId}` : "/dashboard/clients"}
+                href={"/dashboard/clients"}
                 >
                 Cancel
             </Link>

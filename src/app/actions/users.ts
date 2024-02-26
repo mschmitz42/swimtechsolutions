@@ -1,6 +1,6 @@
 "use server"
 
-import { createUser, userError } from "@/db/users"
+import { createUser, updateUser, userError } from "@/db/users"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
 
@@ -18,13 +18,16 @@ export async function createUserAction(prevState: unknown, formData: FormData) {
     redirect("/dashboard/clients")
   }
 
-  export async function editUserAction(prevState: unknown, formData: FormData) {
+  export async function editUserAction(userId: string, prevState: unknown, formData: FormData) {
     const [data, errors] = validateUser(formData, false)
     if (data == null) return errors
   
-    // const newUser = await createUser(data)
-  
+    const result = await updateUser(userId, data)
+
+    if (result != null) return result;
+
     revalidatePath("/dashboard/clients")
+    revalidatePath(`/dashboard/clients/${userId}`)
     redirect("/dashboard/clients")
   }
 
