@@ -27,10 +27,10 @@ export default async function ClientList () {
                     {user.email}
                 </div>
                 <div className="card-footer">
-                    <Link className="btn" href={`lessons/?user=${user.id.toString()}`}>
+                    <Link className="btn" href={`lessons/${user.id.toString()}`}>
                         Lessons
                     </Link>
-                    <Link className="btn" href={`videos/?user=${user.id.toString()}`}>
+                    <Link className="btn" href={`videos/${user.id.toString()}`}>
                         Videos
                     </Link>
                     <Link className="btn" href={`clients/${user.id.toString()}`}>
