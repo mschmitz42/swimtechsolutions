@@ -115,6 +115,10 @@ h2.blue {
   gap: 1rem;
 }
 
+.video-card-grid {
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+}
+
 .card {
   --padding: 1rem;
   background: white;
@@ -136,9 +140,18 @@ h2.blue {
   background-color: color.adjust($primary, $lightness: 30%);
 }
 
+.video-card-header {
+  text-align: center;
+}
+
 .card-body {
   padding: var(--padding);
   flex-grow: 1;
+}
+
+.video-card-body {
+  display: flex;
+  justify-content: center;
 }
 
 .card-preview-text {
