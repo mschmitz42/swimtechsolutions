@@ -59,6 +59,11 @@ export async function createUserAction(prevState: unknown, formData: FormData) {
             errors.password = "Password must be between 8 and 50 characters including 1 upper case, 1 lower case, and 1 digit."
             isValid = false
         }
+    } else {
+      if (!(password === "") && !validatePassword(password)) {
+        errors.password = "Password must be between 8 and 50 characters including 1 upper case, 1 lower case, and 1 digit."
+        isValid = false
+      } 
     }
     
     if (firstName === "") {

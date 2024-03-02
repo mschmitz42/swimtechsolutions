@@ -1,4 +1,4 @@
-import { getUserVideos } from "@/db/videos"
+import VideoList from "@/app/ui/components/VideoList"
 
 
 
@@ -11,6 +11,13 @@ export default function Page() {
             <h1 className="page-title blue">
                 Videos
             </h1>
+        </div>
+        <div className="container">
+            <div className="row">
+                <div className="col-12 col-md-8 ms-3">
+                    <VideoList userId={""}/>
+                </div>
+            </div>
         </div>
 
         </>

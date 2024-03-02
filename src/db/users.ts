@@ -26,13 +26,6 @@ export const getUsers = unstable_cache(
   ["users"]
 )
 
-// export async function getUsers() {
-//   return prisma.user.findMany({
-//     include: {
-//       profile: true,
-//     },
-//   })  
-// }
 
 export const getUser = unstable_cache(
   cache(async (userId: string) => {

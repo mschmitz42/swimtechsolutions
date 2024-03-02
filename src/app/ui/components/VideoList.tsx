@@ -1,4 +1,4 @@
-import { getUserVideos } from "@/db/videos"
+import { getVideos, getUserVideos } from "@/db/videos"
 // import Link from "next/link"
 // import Image from "next/image"
 // import DOMPurify from "isomorphic-dompurify"
@@ -6,7 +6,7 @@ import { getUserVideos } from "@/db/videos"
 
 export default async function VideoList ( { userId }: {userId: string}  ) {
 
-    const videos = await getUserVideos(userId)
+    const videos = userId === ""? await getVideos():await getUserVideos(userId)
 
     return (
         <>

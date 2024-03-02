@@ -10,3 +10,11 @@ export const getUserVideos = unstable_cache(
     }),
     ["video", "userId"]
 )
+
+
+export const getVideos = unstable_cache(
+  cache(async () => {
+    return prisma.video.findMany()
+  }),
+  ["video"]
+)
