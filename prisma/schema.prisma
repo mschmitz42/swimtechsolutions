@@ -87,7 +87,6 @@ model Lesson {
 model Video {
   id            Int  @id @default(autoincrement())
   title         String
-  url           String
   embedCode     String
   user          User @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId        String

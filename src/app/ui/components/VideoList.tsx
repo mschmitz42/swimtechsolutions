@@ -18,7 +18,7 @@ export default async function VideoList ( { userId }: {userId: string}  ) {
                </div>
                 <div className="card-body video-card-body">
                 {/* <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(video.embedCode)}}></div> */}
-                <div dangerouslySetInnerHTML={{__html: video.embedCode}}></div>
+                    <div dangerouslySetInnerHTML={{__html: video.embedCode}}></div>
                 </div>
                 <div className="card-footer">
                     {/* <Link className="btn" href={video.url}>

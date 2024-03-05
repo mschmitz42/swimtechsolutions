@@ -37,7 +37,7 @@ export const getUser = unstable_cache(
       },
     })
   }),
-  ["user", "userId"]
+  ["users", "userId"]
 )
 
 export const getUserByEmail = unstable_cache(
@@ -50,7 +50,7 @@ export const getUserByEmail = unstable_cache(
       },
     })
   }),
-  ["user", "userId"]
+  ["users", "userId"]
 )
 
 export async function createUser({

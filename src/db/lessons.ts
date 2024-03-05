@@ -14,17 +14,36 @@ export type lessonError = {
   
 export const getUserLessons = unstable_cache(
     cache(async (userId: string) => {
-      return prisma.lesson.findMany({ where: { userId: userId } })
+      return prisma.lesson.findMany({ 
+        where: { userId: userId },
+        include: {
+          user: true,
+        }
+       })
     }),
-    ["video", "userId"]
+    ["lessons", "userId"]
 )
 
 
 export const getLessons = unstable_cache(
   cache(async () => {
-    return prisma.lesson.findMany()
+    return prisma.lesson.findMany({
+      include: {
+        user: true,
+      }
+    })
   }),
-  ["video"]
+  ["lessons"]
+)
+
+
+export const getLesson = unstable_cache(
+  cache(async (lessonId: string) => {
+    return prisma.lesson.findUnique({ 
+      where: { id: Number(lessonId) },
+    })
+  }),
+  ["lessons", "lessonId"]
 )
 
 
